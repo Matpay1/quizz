@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">quizz</string>
+    <string name="question">Qui doit absolument rentrer avant minuit ?</string>
+    <string name="reponce1"> Cendrillon</string>
+    <string name="reponce2"> La belle au bois dormant</string>
+    <string name="reponce3"> Blanche-Neige</string>
+    <string name="reponce4"> Moi, sinon ma femme va crier... </string>
+    <string name="resultat1">résultat ?</string>
+    <string name="num_quest">n°1</string>
+    <string name="bt_ret">retour au debut</string>
+
+</resources>
