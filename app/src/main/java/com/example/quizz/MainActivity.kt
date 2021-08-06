@@ -1,19 +1,22 @@
 package com.example.quizz
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
+    var num = 1
+    var score = 0
     fun numpag() {
         val num_quest = findViewById<TextView>(R.id.num_quest)
-        var num = 1
-            num = num + 1
-            num_quest.text = "n°" + num.toString()
+        num ++
+        num_quest.text = "n°" + num
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +29,17 @@ class MainActivity : AppCompatActivity() {
         val resultat1 = findViewById<TextView>(R.id.resultat1)
         val bt_ret = findViewById<Button>(R.id.bt_ret)
 
+        fun bon_rep(){
+            resultat1.text = "  bonne  réponse"
+            resultat1.setTextColor(Color.parseColor("#4CAF50"))
+            score ++
+        }
+        fun mauv_rep(){
+            resultat1.text = "mauvaise réponse"
+            resultat1.setTextColor(Color.parseColor("#F44336"))
+        }
+
+
 
         fun bien_jouet(){
             question.text = "vous avez bien jouer recommencer "
@@ -33,11 +47,18 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "une"
             bt_3.text = "bonne"
             bt_4.text = "partie"
-            val text = "je vous invite a redemarer"
-            val duration = Toast.LENGTH_SHORT
-
-            val toast = Toast.makeText(applicationContext, text, duration)
-            toast.show()        }
+            AlertDialog.Builder(this)
+                .setTitle("bien jouer")
+                .setMessage("je vous invite a redemarer" +
+                        " votre score est de "+score)
+                .setPositiveButton(android.R.string.yes) { dialog, which ->
+                    val newIntent = Intent(this, MainActivity::class.java)
+                    startActivity(newIntent)
+                }
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show()
+        }
         fun newquest4(){
             question.text = "Qui fume sur un champignon devant Alice ? "
             bt_1.text = "Une abeille"
@@ -46,20 +67,24 @@ class MainActivity : AppCompatActivity() {
             bt_4.text = "Une chenille "
 
             bt_1.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 bien_jouet()
+                numpag()
             }
             bt_2.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 bien_jouet()
+                numpag()
             }
             bt_3.setOnClickListener{
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 bien_jouet()
+                numpag()
             }
             bt_4.setOnClickListener {
-                resultat1.text = "  bonne  réponse"
+                bon_rep()
                 bien_jouet()
+                numpag()
             }
         }
         fun newquest3(){
@@ -70,20 +95,25 @@ class MainActivity : AppCompatActivity() {
             bt_4.text = "Peintre"
 
             bt_1.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
+                resultat1.setTextColor(Color.parseColor("#F44336"))
                 newquest4()
+                numpag()
             }
             bt_2.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 newquest4()
+                numpag()
             }
             bt_3.setOnClickListener{
-                resultat1.text = "  bonne  réponse"
+                bon_rep()
                 newquest4()
+                numpag()
             }
             bt_4.setOnClickListener{
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 newquest4()
+                numpag()
             }
         }
 
@@ -95,47 +125,48 @@ class MainActivity : AppCompatActivity() {
             bt_4.text = "Baloo"
 
             bt_1.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 newquest3()
+                numpag()
             }
             bt_2.setOnClickListener {
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 newquest3()
+                numpag()
             }
             bt_3.setOnClickListener{
-                resultat1.text = "mauvaise réponse"
+                mauv_rep()
                 newquest3()
+                numpag()
             }
             bt_4.setOnClickListener{
-                resultat1.text = "  bonne  réponse"
+                bon_rep()
                 newquest3()
+                numpag()
             }
         }
 
-
         bt_1.setOnClickListener{
-            resultat1.text = "  bonne  réponse"
+            bon_rep()
             newquest2()
             numpag()
         }
         bt_2.setOnClickListener{
-            resultat1.text = "mauvaise réponse"
+            mauv_rep()
             newquest2()
             numpag()
-
         }
         bt_3.setOnClickListener{
-            resultat1.text = "mauvaise réponse"
+            mauv_rep()
             newquest2()
             numpag()
-
         }
         bt_4.setOnClickListener{
-            resultat1.text = "mauvaise réponse"
+            mauv_rep()
             newquest2()
             numpag()
-
         }
+
         bt_ret.setOnClickListener {
             val newIntent = Intent(this, MainActivity::class.java)
             startActivity(newIntent)
