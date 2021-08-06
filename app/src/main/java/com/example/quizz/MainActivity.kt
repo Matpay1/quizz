@@ -6,8 +6,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+    fun numpag() {
+        val num_quest = findViewById<TextView>(R.id.num_quest)
+        var num = 1
+            num = num + 1
+            num_quest.text = "n°" + num.toString()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -17,36 +24,20 @@ class MainActivity : AppCompatActivity() {
         val bt_3 = findViewById<Button>(R.id.bt_3)
         val bt_4 = findViewById<Button>(R.id.bt_4)
         val resultat1 = findViewById<TextView>(R.id.resultat1)
-        val num_quest = findViewById<TextView>(R.id.num_quest)
         val bt_ret = findViewById<Button>(R.id.bt_ret)
 
-       /*fun numpag() {
-           var num = 2
-           bt_1.setOnClickListener {
-               num += 1
-               num_quest.text = "n°" + num.toString()
-           }
-           bt_2.setOnClickListener {
-               num += 1
-               num_quest.text = "n°" + num.toString()
-           }
-           bt_3.setOnClickListener {
-               num += 1
-               num_quest.text = "n°" + num.toString()
-           }
-           bt_4.setOnClickListener {
-               num += 1
-               num_quest.text = "n°" + num.toString()
-           }
-       }*/
+
         fun bien_jouet(){
             question.text = "vous avez bien jouer recommencer "
             bt_1.text = "c'etait"
             bt_2.text = "une"
             bt_3.text = "bonne"
             bt_4.text = "partie"
-            resultat1.text = "a++"
-        }
+            val text = "je vous invite a redemarer"
+            val duration = Toast.LENGTH_SHORT
+
+            val toast = Toast.makeText(applicationContext, text, duration)
+            toast.show()        }
         fun newquest4(){
             question.text = "Qui fume sur un champignon devant Alice ? "
             bt_1.text = "Une abeille"
@@ -125,18 +116,25 @@ class MainActivity : AppCompatActivity() {
         bt_1.setOnClickListener{
             resultat1.text = "  bonne  réponse"
             newquest2()
+            numpag()
         }
         bt_2.setOnClickListener{
             resultat1.text = "mauvaise réponse"
             newquest2()
+            numpag()
+
         }
         bt_3.setOnClickListener{
             resultat1.text = "mauvaise réponse"
             newquest2()
+            numpag()
+
         }
         bt_4.setOnClickListener{
             resultat1.text = "mauvaise réponse"
             newquest2()
+            numpag()
+
         }
         bt_ret.setOnClickListener {
             val newIntent = Intent(this, MainActivity::class.java)
