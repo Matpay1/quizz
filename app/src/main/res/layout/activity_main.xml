@@ -2,88 +2,105 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFEC46"
+    android:layout_width="410dp"
+    android:layout_height="600dp"
+    android:background="@drawable/mkmouse"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/num_quest"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="@string/num_quest"
-        android:textSize="48sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/num_quest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/num_quest"
+            android:textColor="@color/black"
+            android:textSize="48sp" />
+    </LinearLayout>
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="17dp" />
+        android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/question"
-        android:layout_width="325dp"
-        android:layout_height="wrap_content"
+        android:layout_width="385dp"
+        android:layout_height="97dp"
+        android:background="#D303A9F4"
         android:text="@string/question"
-        android:textColor="#3F51B5"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="24sp" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="34dp" />
+        android:layout_height="109dp" />
 
     <Button
         android:id="@+id/bt_1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reponce1" />
+        android:layout_height="50dp"
+        android:backgroundTint="#54FF5722"
+        android:text="@string/reponce1"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/bt_2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reponce2" />
+        android:layout_height="50dp"
+        android:backgroundTint="#744CAF50"
+        android:text="@string/reponce2"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/bt_3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reponce3" />
+        android:layout_height="50dp"
+        android:backgroundTint="#83ED457E"
+        android:text="@string/reponce3"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/bt_4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reponce4" />
+        android:layout_height="50dp"
+        android:backgroundTint="#66FFC107"
+        android:text="@string/reponce4"
+        android:textSize="16sp" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="50dp" />
+        android:layout_height="38dp" />
 
-    <Button
-        android:id="@+id/bt_ret"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bt_ret" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="22dp" />
+    <TextView
+        android:id="@+id/resultat1"
+        android:layout_width="385dp"
+        android:layout_height="80dp"
+        android:layout_weight="1"
+        android:background="#D303A9F4"
+        android:text="@string/resultat1"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/resultat1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/resultat1"
-            android:textSize="34sp" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_ret"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bt_ret" />
 
 </LinearLayout>
