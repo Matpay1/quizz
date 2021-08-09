@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity() {
         val resultat1 = findViewById<TextView>(R.id.resultat1)
         val bt_ret = findViewById<Button>(R.id.bt_ret)
         var score = 0
-
-
-
+        var num = 1
 
 
         fun bon_rep () {
@@ -39,26 +37,41 @@ class MainActivity : AppCompatActivity() {
             resultat1.setTextColor(Color.parseColor("#F44336"))
         }
 
+
         fun quest_2 () {
             question.text = "Qui chante \"Il en faut peu pour être heureux...\" ? "
             bt_1.text = "Simba"
             bt_2.text = "Baloo"
             bt_3.text = "toi"
             bt_4.text = "Baghera"
+            bt_2.setOnClickListener{
+                bon_rep()
+                num++
+            }
         }
         fun quest_3 () {
             question.text = "Quel métier exerce l'ami de Mary Poppins ? "
             bt_1.text = "Plombier "
-            bt_2.text = "Ramoneur"
+            bt_2.text = "Peintre"
             bt_3.text = "Couvreur"
-            bt_4.text = "Peintre"
+            bt_4.text = "Ramoneur"
+            bt_4.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_4 () {
             question.text = "Qui fume sur un champignon devant Alice ? "
-            bt_1.text = "Une abeille"
-            bt_2.text = "Une chenille"
+            bt_1.text = "Une chenille"
+            bt_2.text = "Une abeille"
             bt_3.text = "Un papillon"
             bt_4.text = "Un ver"
+            bt_1.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_5 () {
             question.text = "Lequel de ces ustensiles n'est pas utilisé dans le piège qui doit tuer Basil ?"
@@ -66,6 +79,11 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Un couteau"
             bt_3.text = "Un arbalète"
             bt_4.text = "Une hache"
+            bt_2.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_6 () {
             question.text = "Quelle profession exerce Basil ?"
@@ -73,6 +91,11 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Inspecteur de police"
             bt_3.text = "Commissaire de police"
             bt_4.text = "Détective privé"
+            bt_4.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_7 () {
             question.text = "Dans quel véhicule Edgar enlève-t'il les chatons de Duchesse ?"
@@ -80,13 +103,23 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Dans une voiture"
             bt_3.text = "Dans un fiacre"
             bt_4.text = "Dans un side-car"
+            bt_1.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_8 () {
             question.text = " Comment s'appelle le petit singe d'Aladdin ?"
             bt_1.text = "Aba"
             bt_2.text = "Abi"
-            bt_3.text = "Abo"
-            bt_4.text = "Abu"
+            bt_3.text = "Abu"
+            bt_4.text = "Abo"
+            bt_3.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_9 () {
             question.text = " Que prend Ursula, la sorcière de la mer à Ariel, la petite sirène ?"
@@ -94,6 +127,11 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Sa beauté"
             bt_3.text = "Sa voix"
             bt_4.text = "Son scooter des mers"
+            bt_3.setOnClickListener{
+                bon_rep()
+                num++
+
+            }
         }
         fun quest_10 () {
             question.text = "Qui chante \"Hakuna Matata\" ?"
@@ -101,8 +139,12 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Samba"
             bt_3.text = "Pumba"
             bt_4.text = "Bamba"
-        }
+            bt_3.setOnClickListener{
+                bon_rep()
+                num++
 
+            }
+        }
         fun bien_jouet () {
             question.text = "vous avez bien jouer recommencer "
             bt_1.text = "c'etait"
@@ -128,11 +170,11 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = bt_0*/
 
 
-            val x    = bt_2
+            /*val x    = bt_2
             bt_2 = bt_1
             bt_1 = bt_3
             bt_3 = bt_4
-            bt_4 = x
+            bt_4 = x*/
 
             /*val y    = bt_2.isClickable
             bt_2.isClickable = bt_1.isClickable
@@ -150,14 +192,16 @@ class MainActivity : AppCompatActivity() {
             }
         }*/
 
-        var num = 1
+
 
         fun numpag() {
             val num_quest = findViewById<TextView>(R.id.num_quest)
-            num ++
+            num++
             num_quest.text = "n°" + num
-
-            if (num == 2){
+            if (num == 1){
+                quest_2()
+            }
+            else if (num == 2){
                 quest_2()
             }
             else if (num == 3){
@@ -187,13 +231,15 @@ class MainActivity : AppCompatActivity() {
             else
                 bien_jouet()
         }
-        /*bt_1.setOnClickListener{
+
+
+        bt_1.setOnClickListener  {
             mauv_rep()
             numpag()
             ques_alea()
         }
         bt_2.setOnClickListener{
-            bon_rep()
+            mauv_rep()
             numpag()
             ques_alea()
         }
@@ -206,7 +252,7 @@ class MainActivity : AppCompatActivity() {
             mauv_rep()
             numpag()
             ques_alea()
-        }*/
+        }
 
         bt_ret.setOnClickListener {
             val newIntent = Intent(this, MainActivity2::class.java)

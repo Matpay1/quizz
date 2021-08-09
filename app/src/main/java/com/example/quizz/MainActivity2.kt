@@ -16,7 +16,9 @@ class MainActivity2 : AppCompatActivity() {
         val text5 = findViewById<TextView>(R.id.text5)
         val text6 = findViewById<TextView>(R.id.text6)
         val text7 = findViewById<TextView>(R.id.text7)
+        val textrep = findViewById<TextView>(R.id.textrep)
         val butret = findViewById<Button>(R.id.butret)
+        val but9 = findViewById<Button>(R.id.but9)
 
 
         class Quest(
@@ -25,7 +27,7 @@ class MainActivity2 : AppCompatActivity() {
             var bonnereponse: Int, // trailing comma
         )
 
-        val q1 = Quest(Enonce = "Quelle est la couleur du cheval blanc ?", Reponse = arrayOf("Bleu","Blanc","Rouge","Rose"), bonnereponse = 1)
+        val q1 = Quest(Enonce = "Qui doit absolument rentrer avant minuit ?", Reponse = arrayOf("La belle au bois dormant","Cendrillon","Blanche-Neige","Moi, sinon ma femme va crier"), bonnereponse = 1)
         val q2 = Quest(Enonce = "Qui chante \\\"Il en faut peu pour être heureux...\\\" ? ", Reponse = arrayOf("Simba","Baloo","toi","Baghera"), bonnereponse = 1)
         val q3 = Quest(Enonce = "Quel métier exerce l'ami de Mary Poppins ?", Reponse = arrayOf("Plombier","Couvreur","Ramoneur","Peintre"), bonnereponse = 2)
         val q4 = Quest(Enonce = "Qui fume sur un champignon devant Alice ?", Reponse = arrayOf("Une chenille","Un papillon","Une abeille","Un ver"), bonnereponse = 0)
@@ -36,7 +38,7 @@ class MainActivity2 : AppCompatActivity() {
         val q9 = Quest(Enonce = "Que prend Ursula, la sorcière de la mer à Ariel, la petite sirène ?", Reponse = arrayOf("Sa jeunesse","Sa beauté","Sa voix","Son scooter des mers"), bonnereponse = 2)
         val q10 = Quest(Enonce = "Qui chante \"Hakuna Matata\" ?", Reponse = arrayOf("Pimba","Bamba","Pumba","Samba"), bonnereponse = 2)
 
-        val bonrep = q1.Reponse[q1.bonnereponse]
+        var bonrep = q1.Reponse[q1.bonnereponse]
 
         val randArray = q1.Reponse.shuffle()
 
@@ -45,6 +47,24 @@ class MainActivity2 : AppCompatActivity() {
             text5.text = q1.Reponse[1]
             text6.text = q1.Reponse[2]
             text7.text = q1.Reponse[3]
+
+
+
+        fun quest1 (){
+            but9.setOnClickListener {
+                println(q2.toString())
+                textrep.text = "bonne reponse"
+
+                /*if (bonrep == 2){
+
+                }
+                else {
+                    textrep.text = "mauvaise reponse"
+                }*/
+            }
+        }
+        quest1()
+
 
 
 
