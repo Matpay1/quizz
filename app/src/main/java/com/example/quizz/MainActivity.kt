@@ -22,19 +22,16 @@ class MainActivity : AppCompatActivity() {
         var bt_4 = findViewById<Button>(R.id.bt_4)
         val resultat1 = findViewById<TextView>(R.id.resultat1)
         val bt_ret = findViewById<Button>(R.id.bt_ret)
-        var bt_0 = "rien"
         var score = 0
 
-        var ok = 0
-
         fun bon_rep () {
-            resultat1.text = "  bonne  réponse"+ok
+            resultat1.text = "  bonne  réponse"
             resultat1.setTextColor(Color.parseColor("#19DD21"))
             score ++
         }
 
         fun mauv_rep () {
-            resultat1.text = "mauvaise réponse"+ok
+            resultat1.text = "mauvaise réponse"
             resultat1.setTextColor(Color.parseColor("#F44336"))
         }
 
@@ -51,9 +48,6 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Ramoneur"
             bt_3.text = "Couvreur"
             bt_4.text = "Peintre"
-            bt_3.setOnClickListener {
-                bon_rep()
-            }
         }
         fun quest_4 () {
             question.text = "Qui fume sur un champignon devant Alice ? "
@@ -61,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             bt_2.text = "Une chenille"
             bt_3.text = "Un papillon"
             bt_4.text = "Un ver"
-
         }
         fun quest_5 () {
             question.text = "Lequel de ces ustensiles n'est pas utilisé dans le piège qui doit tuer Basil ?"
@@ -129,24 +122,29 @@ class MainActivity : AppCompatActivity() {
             bt_3.text = bt_4.text
             bt_4.text = bt_2.text
             bt_2.text = bt_0*/
-            var x = bt_3
 
-            /*x    = bt_2
+
+            val x    = bt_2
             bt_2 = bt_1
             bt_1 = bt_3
             bt_3 = bt_4
-            bt_4 = x*/
+            bt_4 = x
+
+            /*val y    = bt_2.isClickable
+            bt_2.isClickable = bt_1.isClickable
+            bt_1.isClickable = bt_3.isClickable
+            bt_3.isClickable = bt_4.isClickable
+            bt_4.isClickable = y*/
 
         }
-        fun ok (){
+        /*fun ok (){
             if (ok <= 4){
                 bon_rep()
             }
             else{
                 mauv_rep()
             }
-        }
-
+        }*/
 
         var num = 1
 
@@ -191,7 +189,7 @@ class MainActivity : AppCompatActivity() {
             ques_alea()
         }
         bt_2.setOnClickListener{
-            /*bon_rep()*/
+            bon_rep()
             numpag()
             ques_alea()
         }
@@ -205,7 +203,6 @@ class MainActivity : AppCompatActivity() {
             numpag()
             ques_alea()
         }
-
 
         bt_ret.setOnClickListener {
             val newIntent = Intent(this, MainActivity::class.java)
