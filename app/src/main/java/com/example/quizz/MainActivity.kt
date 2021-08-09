@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         val bt_ret = findViewById<Button>(R.id.bt_ret)
         var score = 0
 
+
+
+
+
         fun bon_rep () {
             resultat1.text = "  bonne  réponse"
             resultat1.setTextColor(Color.parseColor("#19DD21"))
@@ -183,7 +187,7 @@ class MainActivity : AppCompatActivity() {
             else
                 bien_jouet()
         }
-        bt_1.setOnClickListener{
+        /*bt_1.setOnClickListener{
             mauv_rep()
             numpag()
             ques_alea()
@@ -202,10 +206,10 @@ class MainActivity : AppCompatActivity() {
             mauv_rep()
             numpag()
             ques_alea()
-        }
+        }*/
 
         bt_ret.setOnClickListener {
-            val newIntent = Intent(this, MainActivity::class.java)
+            val newIntent = Intent(this, MainActivity2::class.java)
             startActivity(newIntent)
         }
     }
