@@ -1,6 +1,7 @@
 package com.example.quizz
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -19,7 +20,8 @@ class MainActivity2 : AppCompatActivity() {
         val textrep = findViewById<TextView>(R.id.textrep)
         val butret = findViewById<Button>(R.id.butret)
         val but9 = findViewById<Button>(R.id.but9)
-
+        val google = findViewById<Button>(R.id.google)
+        val net1 = findViewById<Button>(R.id.net1)
 
         class Quest(
             val Enonce: String,
@@ -49,7 +51,6 @@ class MainActivity2 : AppCompatActivity() {
             text7.text = q1.Reponse[3]
 
 
-
         fun quest1 (){
             but9.setOnClickListener {
                 println(q2.toString())
@@ -72,5 +73,15 @@ class MainActivity2 : AppCompatActivity() {
             val newIntent = Intent(this, MainActivity::class.java)
             startActivity(newIntent)
         }
+        google.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.reunion.fr/organisez/vos-bonnes-adresses/sortir/"))
+            startActivity(intent)
+        }
+        net1.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://fr.akinator.com/theme-selection"))
+            startActivity(intent)
+        }
+
     }
+
 }
